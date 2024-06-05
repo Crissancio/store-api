@@ -2,6 +2,7 @@ flask
 flask-sqlalchemy
 Flask-Login
 Flask-JWT-Extended
+flask-jwt-extended
 flask-swagger-ui
 pytest
 pytest-flask
