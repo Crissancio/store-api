@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.1",
     "info": {
-        "title": "Tienda Online API",
+        "title": "Tienda API",
         "version": "1.0.0"
     },
     "paths": {
@@ -47,7 +47,7 @@
                 },
                 "responses": {
                     "201": {
-                        "description": "Producto creado",
+                        "description": "Product creado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -89,7 +89,7 @@
                         }
                     },
                     "404": {
-                        "description": "Producto no encontrado"
+                        "description": "Product no encontrado"
                     }
                 }
             },
@@ -121,7 +121,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Producto actualizado",
+                        "description": "Product actualizado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -131,7 +131,7 @@
                         }
                     },
                     "404": {
-                        "description": "Producto no encontrado"
+                        "description": "Product no encontrado"
                     }
                 }
             },
@@ -154,10 +154,10 @@
                 ],
                 "responses": {
                     "204": {
-                        "description": "Producto eliminado"
+                        "description": "Product eliminado"
                     },
                     "404": {
-                        "description": "Producto no encontrado"
+                        "description": "Product no encontrado"
                     }
                 }
             }
@@ -202,7 +202,13 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Token"
+                                    "type": "object",
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string",
+                                            "description": "Token de acceso JWT para el usuario"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -237,8 +243,7 @@
                         "type": "string"
                     },
                     "price": {
-                        "type": "number",
-                        "format": "float"
+                        "type": "float"
                     },
                     "stock": {
                         "type": "integer"
